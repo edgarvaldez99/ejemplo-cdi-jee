@@ -61,3 +61,10 @@ Funciona en ambos casos.
 
 	Al usar @Soap desde el constructor en el punto de Inyeción y quitarle el parámetro PARAMETERS al @Target en la definición de @Soap, este falla, con la Excepción de 'The annotation @Soap is disallowed for this location'.
 	También se probó a nivel de propiedad de la clase CajeroAutomaticoImpl y en el @Target del @Soap le quitamos el parámetro FIELD.
+
+
+11 - Probar el funcionamiento de @Retention
+
+	SOURCE: Falla al momento de compilar.
+	CLASS: Comportamiento por defecto, suponemos que deja la comprobación al IDE. Falla, de todas maneras, al compilar.
+	RUNTIME: Falla al momento de ejecutar.
