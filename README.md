@@ -25,3 +25,5 @@ Los ejemplos están divididos en ramas. Los nombres de las ramas comprenden los 
 	  - Managed Bean [class transportes.SoapTransporte] with qualifiers [@Any @Default]
 	  
 	Esto se debe a que CDI no sabe cual de las tres implementaciones de CATransporte va a inyectar
+	
+04 - Probar que al sacarle @Default a la clase EstandarTransporte siga instanciandola de igual forma, en vez de instanciar los que tengan @Alternative
