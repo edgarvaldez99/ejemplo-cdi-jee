@@ -50,3 +50,8 @@ Los ejemplos están divididos en ramas. Los nombres de las ramas comprenden los 
 08 - Probar que colocando @Inject al campo de la clase TransporteFactory cuando también se está usando @Produces en el método crearTransporte de la misma clase, se crea un error de dependencia circular (recursivo)
 
 Efectivamente, si se cumplen estas condiciones, se genera una dependencia circular: el método buscaría la inyección del campo, y el campo a su vez la inyección del método, infinitas veces.
+
+
+09 - Probar el uso de los Qualifiers a nivel de argumento de constructor. Probar que convivan tanto con @Produces como sin él (utilizando @Default y los @Alternative)
+
+Funciona en ambos casos.
