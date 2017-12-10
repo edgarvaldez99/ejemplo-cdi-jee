@@ -23,7 +23,17 @@ Los ejemplos están divididos en ramas. Los nombres de las ramas comprenden los 
 	  - Managed Bean [class transportes.JsonTransporte] with qualifiers [@Any @Default],
 	  - Managed Bean [class transportes.EstandarTransporte] with qualifiers [@Default @Any],
 	  - Managed Bean [class transportes.SoapTransporte] with qualifiers [@Any @Default]
-	  
+
 	Esto se debe a que CDI no sabe cual de las tres implementaciones de CATransporte va a inyectar
-	
+
+
 04 - Probar que al sacarle @Default a la clase EstandarTransporte siga instanciandola de igual forma, en vez de instanciar los que tengan @Alternative
+
+	Funcionó, Se instanció de igual forma el EstandarTransporte
+
+
+05 - Al poner el tag alternatives en el archivo beans.xml, probar si este es o no instanciado en vez del @Default, es decir, reemplazar por ejemplo el EstandarTransporte por la instancia del JsonTransporte (Esta es una forma de seleccionar otra instancia sin el uso de @Qualifier).
+	
+	Funciona. El transporte indicado en el tag alternatives es el instanciado. Esto se puede utilizar cuando lo que se va a instanciar depende de la situación, por ejemplo, el metodo de transporte depende de la ciudad donde se instala el cajero: simplemente se cambia el transporte en el beans.xml
+	
+	
