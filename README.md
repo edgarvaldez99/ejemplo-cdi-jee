@@ -55,3 +55,9 @@ Efectivamente, si se cumplen estas condiciones, se genera una dependencia circul
 09 - Probar el uso de los Qualifiers a nivel de argumento de constructor. Probar que convivan tanto con @Produces como sin él (utilizando @Default y los @Alternative)
 
 Funciona en ambos casos.
+
+
+10 - Probar cómo funciona el @Target sacandoles unos de sus parámetros (TYPE, METHOD, FIELD, PARAMETERS).
+
+	Al usar @Soap desde el constructor en el punto de Inyeción y quitarle el parámetro PARAMETERS al @Target en la definición de @Soap, este falla, con la Excepción de 'The annotation @Soap is disallowed for this location'.
+	También se probó a nivel de propiedad de la clase CajeroAutomaticoImpl y en el @Target del @Soap le quitamos el parámetro FIELD.
