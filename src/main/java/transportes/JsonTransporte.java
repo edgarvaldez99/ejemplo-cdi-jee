@@ -1,5 +1,8 @@
 package transportes;
 
+import javax.enterprise.inject.Alternative;
+
+@Alternative
 public class JsonTransporte implements CATransporte {
 
 	public void comunicarseConElBanco(byte[] datapacket) {

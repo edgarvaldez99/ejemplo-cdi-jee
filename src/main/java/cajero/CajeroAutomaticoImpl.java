@@ -2,16 +2,19 @@ package cajero;
 
 import java.math.BigDecimal;
 
+import javax.inject.Inject;
+
 import transportes.CATransporte;
 
 public class CajeroAutomaticoImpl implements CajeroAutomatico {
 
-	private CATransporte transporte; 
+	CATransporte transporte; 
 
 	public CATransporte getTransporte() {
 		return transporte;
 	}
 
+	@Inject
 	public void setTransporte(CATransporte transporte) {
 		this.transporte = transporte;
 	}
@@ -25,5 +28,4 @@ public class CajeroAutomaticoImpl implements CajeroAutomatico {
 		System.out.println("Para extraer");
 		transporte.comunicarseConElBanco(null);
 	}
-	
 }

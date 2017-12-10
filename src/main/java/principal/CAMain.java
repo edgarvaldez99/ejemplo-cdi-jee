@@ -2,17 +2,20 @@ package principal;
 
 import java.math.BigDecimal;
 
-import cajero.CajeroAutomatico;
-import cajero.CajeroAutomaticoImpl;
-import transportes.CATransporte;
-import transportes.EstandarTransporte;
+import javax.inject.Inject;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 
+import cajero.CajeroAutomatico;
+
+@Path("/")
 public class CAMain {
 
-	public static void main(String[] args) {
-		CajeroAutomatico ca = new CajeroAutomaticoImpl();
-		CATransporte t = new EstandarTransporte();
-		((CajeroAutomaticoImpl) ca).setTransporte(t);
-		ca.depositar(new BigDecimal("100.00"));
-	}
+    @Inject
+    CajeroAutomatico ca;
+
+    @GET
+    public void main() {
+    	ca.depositar(new BigDecimal("100.00"));
+    }
 }
