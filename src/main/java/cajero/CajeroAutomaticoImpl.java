@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import javax.inject.Inject;
 
 import transportes.CATransporte;
+import transportes.qualifiers.Agrupador;
 import transportes.qualifiers.Soap;
 
 public class CajeroAutomaticoImpl implements CajeroAutomatico {
@@ -12,7 +13,7 @@ public class CajeroAutomaticoImpl implements CajeroAutomatico {
 	CATransporte transporte;
 
 	@Inject
-    public CajeroAutomaticoImpl(@Soap CATransporte transporte) {
+    public CajeroAutomaticoImpl(@Agrupador CATransporte transporte) {
         this.transporte = transporte;
     }
 

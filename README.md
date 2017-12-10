@@ -71,3 +71,19 @@ Funciona en ambos casos.
 
 
 12 - Agregar los otros Qualifiers, es decir, los Qualifiers para Json, Estandar y también crear un Qualifier agrupador, es decir, un qualifier que se use tanto en Json como en Soap.
+
+
+13 - Quitar el @Soap del constructor y usar el @Agrupador, ver que pasa.
+
+	Al hacer esto obtenemos el siguiente error:
+	
+	Caused by: org.jboss.weld.exceptions.DeploymentException: WELD-001409: Ambiguous dependencies for type CATransporte with qualifiers @Agrupador
+	  at injection point [BackedAnnotatedParameter] Parameter 1 of [BackedAnnotatedConstructor] @Inject public cajero.CajeroAutomaticoImpl(@Agrupador CATransporte)
+	  at cajero.CajeroAutomaticoImpl.<init>(CajeroAutomaticoImpl.java:16)
+	  Possible dependencies: 
+	  - Managed Bean [class transportes.JsonTransporte] with qualifiers [@Json @Agrupador @Any],
+	  - Managed Bean [class transportes.SoapTransporte] with qualifiers [@Soap @Agrupador @Any]
+	  
+	Esto se debe a que @Agrupador esta referenciando a 2 implementaciones de CATransporte, Json y Soap, por ende el error es disparado.
+
+	
