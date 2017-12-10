@@ -35,8 +35,13 @@ Los ejemplos están divididos en ramas. Los nombres de las ramas comprenden los 
 05 - Al poner el tag alternatives en el archivo beans.xml, probar si este es o no instanciado en vez del @Default, es decir, reemplazar por ejemplo el EstandarTransporte por la instancia del JsonTransporte (Esta es una forma de seleccionar otra instancia sin el uso de @Qualifier).
 	
 	Funciona. El transporte indicado en el tag alternatives es el instanciado. Esto se puede utilizar cuando lo que se va a instanciar depende de la situación, por ejemplo, el metodo de transporte depende de la ciudad donde se instala el cajero: simplemente se cambia el transporte en el beans.xml
-	
+
 
 06 - Trasladar el @Inject a nivel de construnctor.
 
 	En este caso la inyección también funcionó a la perfección
+
+
+07 - Probar el uso de @Produces, ver que pasa con la obtención de instancias de una de las implementaciones de CATransporte si la clase factory es creada, en caso de error describir la solución.
+
+	Ocurre el error de Ambiguedad, puesto que al agregar @Produces es como si fuera que se agregó una implementación más de la interface CATransporte, por ende, para que el error deje de saltar hay que poner @Alternative a la clase que anteriormente era la instancia por defecto, en este caso a EstandarTransporte debemos de anotarlo con @Alternative.
