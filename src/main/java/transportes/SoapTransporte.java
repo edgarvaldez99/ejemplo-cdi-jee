@@ -1,8 +1,5 @@
 package transportes;
 
-import javax.enterprise.inject.Alternative;
-
-@Alternative
 public class SoapTransporte implements CATransporte {
 
 	public void comunicarseConElBanco(byte[] datapacket) {
