@@ -8,13 +8,17 @@ import transportes.CATransporte;
 
 public class CajeroAutomaticoImpl implements CajeroAutomatico {
 
-	CATransporte transporte; 
+	CATransporte transporte;
+
+	@Inject 
+    public CajeroAutomaticoImpl(CATransporte transporte) {
+        this.transporte = transporte;
+    }
 
 	public CATransporte getTransporte() {
 		return transporte;
 	}
 
-	@Inject
 	public void setTransporte(CATransporte transporte) {
 		this.transporte = transporte;
 	}

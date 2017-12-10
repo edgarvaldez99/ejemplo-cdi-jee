@@ -36,4 +36,7 @@ Los ejemplos están divididos en ramas. Los nombres de las ramas comprenden los 
 	
 	Funciona. El transporte indicado en el tag alternatives es el instanciado. Esto se puede utilizar cuando lo que se va a instanciar depende de la situación, por ejemplo, el metodo de transporte depende de la ciudad donde se instala el cajero: simplemente se cambia el transporte en el beans.xml
 	
-	
+
+06 - Trasladar el @Inject a nivel de construnctor.
+
+	En este caso la inyección también funcionó a la perfección
