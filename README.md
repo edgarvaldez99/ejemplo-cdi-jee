@@ -45,3 +45,8 @@ Los ejemplos están divididos en ramas. Los nombres de las ramas comprenden los 
 07 - Probar el uso de @Produces, ver que pasa con la obtención de instancias de una de las implementaciones de CATransporte si la clase factory es creada, en caso de error describir la solución.
 
 	Ocurre el error de Ambiguedad, puesto que al agregar @Produces es como si fuera que se agregó una implementación más de la interface CATransporte, por ende, para que el error deje de saltar hay que poner @Alternative a la clase que anteriormente era la instancia por defecto, en este caso a EstandarTransporte debemos de anotarlo con @Alternative.
+
+
+08 - Probar que colocando @Inject al campo de la clase TransporteFactory cuando también se está usando @Produces en el método crearTransporte de la misma clase, se crea un error de dependencia circular (recursivo)
+
+Efectivamente, si se cumplen estas condiciones, se genera una dependencia circular: el método buscaría la inyección del campo, y el campo a su vez la inyección del método, infinitas veces.
