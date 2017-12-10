@@ -20,6 +20,6 @@ import javax.inject.Qualifier;
 @Documented
 @Retention(RUNTIME)
 @Target({ TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE, ANNOTATION_TYPE, PACKAGE })
-public @interface Soap {
+public @interface Estandar {
 
 }

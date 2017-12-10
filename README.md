@@ -68,3 +68,6 @@ Funciona en ambos casos.
 	SOURCE: Falla al momento de compilar.
 	CLASS: Comportamiento por defecto, suponemos que deja la comprobación al IDE. Falla, de todas maneras, al compilar.
 	RUNTIME: Falla al momento de ejecutar.
+
+
+12 - Agregar los otros Qualifiers, es decir, los Qualifiers para Json, Estandar y también crear un Qualifier agrupador, es decir, un qualifier que se use tanto en Json como en Soap.

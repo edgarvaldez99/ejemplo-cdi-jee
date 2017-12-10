@@ -1,8 +1,8 @@
 package transportes;
 
-import javax.enterprise.inject.Alternative;
+import transportes.qualifiers.Estandar;
 
-@Alternative
+@Estandar
 public class EstandarTransporte implements CATransporte {
 
 	public void comunicarseConElBanco(byte[] datapacket) {
