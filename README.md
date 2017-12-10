@@ -73,7 +73,7 @@ Funciona en ambos casos.
 12 - Agregar los otros Qualifiers, es decir, los Qualifiers para Json, Estandar y también crear un Qualifier agrupador, es decir, un qualifier que se use tanto en Json como en Soap.
 
 
-13 - Quitar el @Soap del constructor y usar el @Agrupador, ver que pasa.
+13 - Quitar el @Soap del constructor y usar el @Agrupador, ver qué pasa. El @Agrupador por sí solo no es capaz de definir la inyección. Esto se puede utilizar para organizar y documentar, ya que obliga a escribir, por ejemplo @Agrupador (que sería el agrupador de qualifiers) y @Soap.
 
 	Al hacer esto obtenemos el siguiente error:
 	
