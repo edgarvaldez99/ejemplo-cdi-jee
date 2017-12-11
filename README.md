@@ -76,7 +76,7 @@ Funciona en ambos casos.
 13 - Quitar el @Soap del constructor y usar el @Agrupador, ver qué pasa. El @Agrupador por sí solo no es capaz de definir la inyección. Esto se puede utilizar para organizar y documentar, ya que obliga a escribir, por ejemplo @Agrupador (que sería el agrupador de qualifiers) y @Soap.
 
 	Al hacer esto obtenemos el siguiente error:
-	
+
 	Caused by: org.jboss.weld.exceptions.DeploymentException: WELD-001409: Ambiguous dependencies for type CATransporte with qualifiers @Agrupador
 	  at injection point [BackedAnnotatedParameter] Parameter 1 of [BackedAnnotatedConstructor] @Inject public cajero.CajeroAutomaticoImpl(@Agrupador CATransporte)
 	  at cajero.CajeroAutomaticoImpl.<init>(CajeroAutomaticoImpl.java:16)
@@ -86,4 +86,5 @@ Funciona en ambos casos.
 	  
 	Esto se debe a que @Agrupador esta referenciando a 2 implementaciones de CATransporte, Json y Soap, por ende el error es disparado.
 
-	
+
+14 - Probar @Inject en un construnctor con 2 parámetros, por ejemplo usando el @Soap y @Estandar, y luego sacandole el @Estandar y probar si entra en el producer.

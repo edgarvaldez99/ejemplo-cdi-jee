@@ -6,32 +6,37 @@ import javax.inject.Inject;
 
 import transportes.CATransporte;
 import transportes.qualifiers.Agrupador;
+import transportes.qualifiers.Estandar;
 import transportes.qualifiers.Soap;
 
 public class CajeroAutomaticoImpl implements CajeroAutomatico {
 
-	CATransporte transporte;
+	CATransporte estandarTransporte;
+	CATransporte soapTransporte;
 
 	@Inject
-    public CajeroAutomaticoImpl(@Agrupador CATransporte transporte) {
-        this.transporte = transporte;
+    public CajeroAutomaticoImpl(@Estandar CATransporte estandarTransporte, @Soap @Agrupador CATransporte soapTransporte) {
+        this.estandarTransporte = estandarTransporte;
+		this.soapTransporte = soapTransporte;
     }
 
 	public CATransporte getTransporte() {
-		return transporte;
+		return estandarTransporte;
 	}
 
 	public void setTransporte(CATransporte transporte) {
-		this.transporte = transporte;
+		this.estandarTransporte = transporte;
 	}
 
 	public void depositar(BigDecimal bd) {
 		System.out.println("Para depositar");
-		transporte.comunicarseConElBanco(null);
+		estandarTransporte.comunicarseConElBanco(null);
+		soapTransporte.comunicarseConElBanco(null);
 	}
 
 	public void extraer(BigDecimal bd) {
 		System.out.println("Para extraer");
-		transporte.comunicarseConElBanco(null);
+		estandarTransporte.comunicarseConElBanco(null);
+		soapTransporte.comunicarseConElBanco(null);
 	}
 }
