@@ -88,3 +88,7 @@ Funciona en ambos casos.
 
 
 14 - Probar @Inject en un construnctor con 2 parámetros, por ejemplo usando el @Soap y @Estandar, y luego sacandole el @Estandar y probar si entra en el producer.
+
+	Funcionó en ambos casos:
+		- Usando los 2 Qualifiers: @Estandar y @Soap
+		- Usando el @Poçroduces, es decir, quitandole del parámetro del constructor el Qualifier @Estandar

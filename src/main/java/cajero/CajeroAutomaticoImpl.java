@@ -6,7 +6,6 @@ import javax.inject.Inject;
 
 import transportes.CATransporte;
 import transportes.qualifiers.Agrupador;
-import transportes.qualifiers.Estandar;
 import transportes.qualifiers.Soap;
 
 public class CajeroAutomaticoImpl implements CajeroAutomatico {
@@ -15,7 +14,7 @@ public class CajeroAutomaticoImpl implements CajeroAutomatico {
 	CATransporte soapTransporte;
 
 	@Inject
-    public CajeroAutomaticoImpl(@Estandar CATransporte estandarTransporte, @Soap @Agrupador CATransporte soapTransporte) {
+    public CajeroAutomaticoImpl(CATransporte estandarTransporte, @Soap @Agrupador CATransporte soapTransporte) {
         this.estandarTransporte = estandarTransporte;
 		this.soapTransporte = soapTransporte;
     }
