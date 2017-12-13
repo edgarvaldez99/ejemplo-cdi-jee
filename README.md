@@ -96,3 +96,6 @@ Funciona en ambos casos.
 15 - Probar el uso de @PostConstruct, este se utiliza para agregar lógica a un método de la clase que se ejecutará después del constructor. En este ejemplo la lógica debe decidir cual de los tres tipos de transporte usar de acuerdo a los valores de las propiedades "usarJson" y "despuesDelFirewall".
 
 	El ejemplo funcionó, usarJson = true y despuesDelFirewall = false, por ende se eligió a Json como medio de transporte
+
+
+16 - En el paso anterior, la lógica de decisión del transporte a utilizar quedó en la clase CajeroAutomaticoImpl, esto no debe ser así puesto que el cajero solo se debe encargar de depositar y extraer, no de manejar la lógica de que transporte va a usarse. Para evitar este problema, debemos transladar la lógica al TransporteFactory, es decir, usando el @Produces.
