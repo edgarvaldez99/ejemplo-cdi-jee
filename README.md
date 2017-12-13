@@ -98,4 +98,4 @@ Funciona en ambos casos.
 	El ejemplo funcionó, usarJson = true y despuesDelFirewall = false, por ende se eligió a Json como medio de transporte
 
 
-16 - En el paso anterior, la lógica de decisión del transporte a utilizar quedó en la clase CajeroAutomaticoImpl, esto no debe ser así puesto que el cajero solo se debe encargar de depositar y extraer, no de manejar la lógica de que transporte va a usarse. Para evitar este problema, debemos transladar la lógica al TransporteFactory, es decir, usando el @Produces.
+16 - En el paso anterior, la lógica de decisión del transporte a utilizar quedó en la clase CajeroAutomaticoImpl, esto no debe ser así puesto que el cajero solo se debe encargar de depositar y extraer, no de manejar la lógica de qué transporte va a usarse. Para evitar este problema, debemos transladar la lógica al TransporteFactory, es decir, usando el @Produces.
