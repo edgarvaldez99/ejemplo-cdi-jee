@@ -92,3 +92,7 @@ Funciona en ambos casos.
 	Funcionó en ambos casos:
 		- Usando los 2 Qualifiers: @Estandar y @Soap
 		- Usando el @Poçroduces, es decir, quitandole del parámetro del constructor el Qualifier @Estandar
+
+15 - Probar el uso de @PostConstruct, este se utiliza para agregar lógica a un método de la clase que se ejecutará después del constructor. En este ejemplo la lógica debe decidir cual de los tres tipos de transporte usar de acuerdo a los valores de las propiedades "usarJson" y "despuesDelFirewall".
+
+	El ejemplo funcionó, usarJson = true y despuesDelFirewall = false, por ende se eligió a Json como medio de transporte
