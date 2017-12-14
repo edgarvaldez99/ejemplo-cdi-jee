@@ -22,4 +22,5 @@ import javax.inject.Qualifier;
 @Target({ TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE, ANNOTATION_TYPE, PACKAGE })
 public @interface Transporte {
 	TipoTransporte tipo() default TipoTransporte.ESTANDAR;
+	int version() default 0;
 }

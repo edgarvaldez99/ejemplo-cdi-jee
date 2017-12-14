@@ -14,11 +14,11 @@ public class TransporteFactory {
     private boolean detrasDelFirewall = true;
 
 	@Produces
-	public CATransporte crearTransporte(@Transporte(tipo=TipoTransporte.SOAP) @Agrupador CATransporte soapTransporte, @Transporte(tipo=TipoTransporte.JSON) @Agrupador CATransporte jsonTransporte) {
+	public CATransporte crearTransporte(@Transporte(tipo=TipoTransporte.SOAP) @Agrupador CATransporte soapTransporte, @Transporte(tipo=TipoTransporte.JSON, version=1) @Agrupador CATransporte jsonTransporte) {
         System.out.println("CATransporte creado con @Produces");
         if (detrasDelFirewall) {
             if (usarJSON) {
-            	System.out.println("Retornado transporte tipo Json desde el @Produces");
+            	System.out.println("Retornado transporte tipo Json desde el @Produces y se eligió la versión 1 ");
             	return jsonTransporte;
             } else {
             	System.out.println("Retornado transporte tipo Soap desde el @Produces");

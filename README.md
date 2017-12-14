@@ -104,3 +104,8 @@ Funciona en ambos casos.
 17 - Agregar un nuevo Qualifier llamado Trasporte, que reciba como parámetro el tipo a inyectar a través de un enum de Java. En este ejemplo se introduce el concepto de Miembros para los Qualifier.
 
 	Funcionó
+
+
+18 - Un Qualifier puede tener varios miembros, en este ejemplo debemos agregar un miembro más, simplemente para demostración imprimiendo en consola su valor. Verificar que pasa si en @Transporte tiene miembros con valores distintos en la clase y en el punto de Inyeccion.
+
+	Al ponerle miembros con valores distintos, este falla en el momento de compilación, en caso de hacer coincidir los valores de los miembros de @Transporte funciona.

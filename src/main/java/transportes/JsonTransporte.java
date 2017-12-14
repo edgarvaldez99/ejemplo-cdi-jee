@@ -7,7 +7,7 @@ import transportes.qualifiers.Transporte;
 
 @Json
 @Agrupador
-@Transporte(tipo=TipoTransporte.JSON)
+@Transporte(tipo=TipoTransporte.JSON, version=1)
 public class JsonTransporte implements CATransporte {
 
 	public void comunicarseConElBanco(byte[] datapacket) {
