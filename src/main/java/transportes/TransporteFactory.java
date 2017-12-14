@@ -3,8 +3,8 @@ package transportes;
 import javax.enterprise.inject.Produces;
 
 import transportes.qualifiers.Agrupador;
-import transportes.qualifiers.Json;
-import transportes.qualifiers.Soap;
+import transportes.qualifiers.TipoTransporte;
+import transportes.qualifiers.Transporte;
 
 public class TransporteFactory {
 
@@ -14,7 +14,7 @@ public class TransporteFactory {
     private boolean detrasDelFirewall = true;
 
 	@Produces
-	public CATransporte crearTransporte(@Soap @Agrupador CATransporte soapTransporte, @Json @Agrupador CATransporte jsonTransporte) {
+	public CATransporte crearTransporte(@Transporte(tipo=TipoTransporte.SOAP) @Agrupador CATransporte soapTransporte, @Transporte(tipo=TipoTransporte.JSON) @Agrupador CATransporte jsonTransporte) {
         System.out.println("CATransporte creado con @Produces");
         if (detrasDelFirewall) {
             if (usarJSON) {

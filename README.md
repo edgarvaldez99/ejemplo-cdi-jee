@@ -99,3 +99,8 @@ Funciona en ambos casos.
 
 
 16 - En el paso anterior, la lógica de decisión del transporte a utilizar quedó en la clase CajeroAutomaticoImpl, esto no debe ser así puesto que el cajero solo se debe encargar de depositar y extraer, no de manejar la lógica de qué transporte va a usarse. Para evitar este problema, debemos transladar la lógica al TransporteFactory, es decir, usando el @Produces.
+
+
+17 - Agregar un nuevo Qualifier llamado Trasporte, que reciba como parámetro el tipo a inyectar a través de un enum de Java. En este ejemplo se introduce el concepto de Miembros para los Qualifier.
+
+	Funcionó

@@ -1,8 +1,9 @@
 package transportes;
 
-import transportes.qualifiers.Estandar;
+import transportes.qualifiers.TipoTransporte;
+import transportes.qualifiers.Transporte;
 
-@Estandar
+@Transporte(tipo=TipoTransporte.ESTANDAR)
 public class EstandarTransporte implements CATransporte {
 
 	public void comunicarseConElBanco(byte[] datapacket) {

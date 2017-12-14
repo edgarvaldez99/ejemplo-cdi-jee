@@ -1,10 +1,11 @@
 package transportes;
 
 import transportes.qualifiers.Agrupador;
-import transportes.qualifiers.Soap;
+import transportes.qualifiers.TipoTransporte;
+import transportes.qualifiers.Transporte;
 
-@Soap
 @Agrupador
+@Transporte(tipo=TipoTransporte.SOAP)
 public class SoapTransporte implements CATransporte {
 
 	public void comunicarseConElBanco(byte[] datapacket) {
