@@ -109,3 +109,8 @@ Funciona en ambos casos.
 18 - Un Qualifier puede tener varios miembros, en este ejemplo debemos agregar un miembro más, simplemente para demostración imprimiendo en consola su valor. Verificar que pasa si en @Transporte tiene miembros con valores distintos en la clase y en el punto de Inyeccion.
 
 	Al ponerle miembros con valores distintos, este falla en el momento de compilación, en caso de hacer coincidir los valores de los miembros de @Transporte funciona.
+
+	
+19 - Entramos con los conceptos avanzados, esta vez toca aprander sobre el objeto InjectionPoint, en la clase TransporteFactory borrar la lógica de decisión de Inyección y reemplazar los parámetros por el objeto InjectionPoit e imprimir el resultado de todos sus métodos, verificar que el objeto se inyecte correctamente
+
+	Funcionó
