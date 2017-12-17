@@ -1,19 +1,18 @@
 package transportes;
 
 import javax.enterprise.inject.Produces;
+import javax.enterprise.inject.spi.Annotated;
 import javax.enterprise.inject.spi.InjectionPoint;
 
 public class TransporteFactory {
 
 	@Produces
 	public CATransporte crearTransporte(InjectionPoint injectionPoint) {
-		System.out.println("Anotado " + injectionPoint.getAnnotated());
-        System.out.println("bean " + injectionPoint.getBean());
-        System.out.println("Miembro " + injectionPoint.getMember());
-        System.out.println("Qualifiers " + injectionPoint.getQualifiers());
-        System.out.println("Tipo " + injectionPoint.getType());
-        System.out.println("Es Delegado " + injectionPoint.isDelegate());
-        System.out.println("Es Transitorio " + injectionPoint.isTransient());
-        return new EstandarTransporte();
+		Annotated annotated = injectionPoint.getAnnotated();
+		TransporteConfig transporteConfig = annotated.getAnnotation(TransporteConfig.class);
+		CATransporte transporte = new EstandarTransporte();
+		transporte.setReintentos((transporteConfig == null) ? TransporteConfig.REINTENTOS_POR_DEFECTO : transporteConfig.reintentos());
+        System.out.println("Obtenido el transporte desde el @Produces");
+        return transporte;
     }
 }

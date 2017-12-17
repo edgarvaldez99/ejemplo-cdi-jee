@@ -114,3 +114,8 @@ Funciona en ambos casos.
 19 - Entramos con los conceptos avanzados, esta vez toca aprander sobre el objeto InjectionPoint, en la clase TransporteFactory borrar la lógica de decisión de Inyección y reemplazar los parámetros por el objeto InjectionPoit e imprimir el resultado de todos sus métodos, verificar que el objeto se inyecte correctamente
 
 	Funcionó
+
+
+20 - En este ejemplo trabajaremos más de cerca con el primer método de InjectionPoint, el getAnnotated, para ello debemos crear una nueva anotación, esta vez no como qualifier, cuyo nombre debe ser TransporteConfig y debe recibir la cantidad de reintentos que un tipo de transporte puede manejar, para ello editamos la Interfaces CATransporte agregandole el método setReintentos para que reciba la cantidad de reintentos del transporte, en cada clase implemetada de esta interfaces y verificar que imprima en consola la cantidad de reintentos que le pasamos como parámetro. Para que la anotación de confoguración funcione a nivel de Controller o método setter, debemos anotar al parámetro que se quiere configurar, es decir, debemos poner @TransporteConfig frente al parámetro CATransporte transporte.
+
+	Funcionó

@@ -5,15 +5,16 @@ import java.math.BigDecimal;
 import javax.inject.Inject;
 
 import transportes.CATransporte;
+import transportes.TransporteConfig;
 
 public class CajeroAutomaticoImpl implements CajeroAutomatico {
 
 	CATransporte transporte;
 
 	@Inject
-    public CajeroAutomaticoImpl(CATransporte transporte) {
-        this.transporte = transporte;
-    }
+	public CajeroAutomaticoImpl(@TransporteConfig(reintentos=2) CATransporte transporte) {
+		this.transporte = transporte;
+	}
 
 	public CATransporte getTransporte() {
 		return transporte;
