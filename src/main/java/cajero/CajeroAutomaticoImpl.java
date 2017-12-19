@@ -7,21 +7,15 @@ import javax.inject.Inject;
 import transportes.CATransporte;
 import transportes.TransporteConfig;
 
+@TransporteConfig(reintentos=17)
 public class CajeroAutomaticoImpl implements CajeroAutomatico {
 
-	CATransporte transporte;
-
+	@TransporteConfig(reintentos=9)
 	@Inject
-	public CajeroAutomaticoImpl(@TransporteConfig(reintentos=2) CATransporte transporte) {
-		this.transporte = transporte;
-	}
+	CATransporte transporte;
 
 	public CATransporte getTransporte() {
 		return transporte;
-	}
-
-	public void setTransporte(CATransporte transporte) {
-		this.transporte = transporte;
 	}
 
 	public void depositar(BigDecimal bd) {

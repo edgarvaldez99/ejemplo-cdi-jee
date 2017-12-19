@@ -119,3 +119,8 @@ Funciona en ambos casos.
 20 - En este ejemplo trabajaremos más de cerca con el primer método de InjectionPoint, el getAnnotated, para ello debemos crear una nueva anotación, esta vez no como qualifier, cuyo nombre debe ser TransporteConfig y debe recibir la cantidad de reintentos que un tipo de transporte puede manejar, para ello editamos la Interfaces CATransporte agregandole el método setReintentos para que reciba la cantidad de reintentos del transporte, en cada clase implemetada de esta interfaces y verificar que imprima en consola la cantidad de reintentos que le pasamos como parámetro. Para que la anotación de confoguración funcione a nivel de Controller o método setter, debemos anotar al parámetro que se quiere configurar, es decir, debemos poner @TransporteConfig frente al parámetro CATransporte transporte.
 
 	Funcionó
+
+
+21 - Esta vez trabajamos con el método getBean el cual trae un objeto llamado ManagedBean, y este posee una referencia a la clase donde se hace la inyección. Para este ejemplo agregar la Anotación @TransporteConfig a nivel de clase y probar que los métodos getBeanClass().getAnnotation() del objeto mencionado hagan referencia a la anotación.
+
+	Funcionó
