@@ -133,3 +133,18 @@ Funciona en ambos casos.
 
     Funcionó, Se obtuvo la instancia de transporte a través del @Produces, es decir, a través del @Default
     
+    
+24 - Continuando con el uso de la clase Instance, para este ejemplo, quitarle todos los qualifiers a EstandarTransporte, JsonTransporte y SoapTransporte.
+     En el @PostConstruct de CajeroAutomaticoImpl imprimir:
+     		System.out.println("Encontró varias instancias de CATransporte? " + todosLosTransportes.isAmbiguous());
+     		System.out.println("No encontró instancia de CATransporte ? " + todosLosTransportes.isUnsatisfied()); 
+     Verificar el resultado.
+     		
+        El resultado en consola es el siguiente:
+     
+        INFO   Encontró varias instancias de CATransporte? true
+        INFO   No encontró instancia de CATransporte ? false
+        INFO   Para depositar
+        INFO   Comunicación con el banco via JSON con 0 reintento
+        INFO   Comunicación con el banco via Estandar con 0 reintento
+        INFO   Comunicación con el banco via SOAP con 0 reintento

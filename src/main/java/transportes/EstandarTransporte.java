@@ -1,9 +1,5 @@
 package transportes;
 
-import transportes.qualifiers.TipoTransporte;
-import transportes.qualifiers.Transporte;
-
-@Transporte(tipo=TipoTransporte.ESTANDAR)
 public class EstandarTransporte implements CATransporte {
 
 	private int reintentos;
