@@ -2,20 +2,40 @@ package cajero;
 
 import java.math.BigDecimal;
 
+import javax.annotation.PostConstruct;
+import javax.enterprise.inject.Default;
+import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
 
 import transportes.CATransporte;
-import transportes.qualifiers.TipoTransporte;
-import transportes.qualifiers.Transporte;
+import transportes.qualifiers.Json;
+import transportes.qualifiers.Soap;
 
 public class CajeroAutomaticoImpl implements CajeroAutomatico {
 
-	@Inject
-	@Transporte(tipo=TipoTransporte.JSON, version=1, reintentos=5)
-	CATransporte transporte;
+	@Inject @Soap
+	private Instance<CATransporte> soapTransporte;
 
-	public CATransporte getTransporte() {
-		return transporte;
+	@Inject @Json
+	private Instance<CATransporte> jsonTransporte;
+
+	@Inject @Default
+	private Instance<CATransporte> defaultTransporte;
+
+	private CATransporte transporte;
+
+	@PostConstruct
+	protected void init() {
+		if (!defaultTransporte.isUnsatisfied()) {
+			System.out.println("Elegido el Default");
+			transporte = defaultTransporte.iterator().next();
+		} else if (!jsonTransporte.isUnsatisfied()) {
+			System.out.println("Elegido JSON");
+			transporte = jsonTransporte.iterator().next();
+		} else if (!soapTransporte.isUnsatisfied()) {
+			System.out.println("Elegido SOAP");
+			transporte = soapTransporte.iterator().next();
+		}
 	}
 
 	public void depositar(BigDecimal bd) {

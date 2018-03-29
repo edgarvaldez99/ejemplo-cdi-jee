@@ -126,3 +126,10 @@ Funciona en ambos casos.
 	Funcionó
 	
 22 - En este ejemplo continuamos con el concepto de miembro en los qualifiers, esta vez agregamos el uso de @Nonbinding. Recordando que un qualifier es una anotación que sirve para discriminar tipos de objetos a inyectarse. La discriminación se hace a través de sus miembros (o a través de la falta de miembro alguno). Ejemplo: En @Transporte(tipo, version), @Transporte es el qualifier y tipo, versión son miembros del qualifier que hacen parte de la discriminación. Sin embargo, se pueden agregar miembros que no hagan parte de la discriminación anotándolos con @Nonbinding. Ejemplo: @Transporte(tipo=JSON, version=1, reintentos=5), en este caso reintentos es el que no forma parte de la discriminación. En este caso la cantidad de reintentos debe ser cargada desde el punto de inyección y cambiando su valor este no tendría efecto en el tipo de objeto a inyectarse.
+
+    Funcionó
+
+23 - Instance es otra manera de obtener las instancias en una colección. Usarlo para obtener todas las instancias que existan de transportes. Usar el PostConstruct para definir la lógica de cuál transporte utilizar.
+
+    Funcionó, Se obtuvo la instancia de transporte a través del @Produces, es decir, a través del @Default
+    
