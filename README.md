@@ -148,3 +148,16 @@ Funciona en ambos casos.
         INFO   Comunicación con el banco via JSON con 0 reintento
         INFO   Comunicación con el banco via Estandar con 0 reintento
         INFO   Comunicación con el banco via SOAP con 0 reintento
+
+
+25 - Continuando con el uso de la clase Instance y el ejemplo anterior, pero esta vez quitarle la implementación de la Interface CATransporte a EstandarTransporte, JsonTransporte y SoapTransporte.
+     En el @PostConstruct de CajeroAutomaticoImpl imprimir:
+     		System.out.println("Encontró varias instancias de CATransporte? " + todosLosTransportes.isAmbiguous());
+     		System.out.println("No encontró instancia de CATransporte ? " + todosLosTransportes.isUnsatisfied()); 
+     Verificar el resultado
+     		
+        El resultado en consola es el siguiente:
+        
+        INFO   Encontró varias instancias de CATransporte? false
+        INFO   No encontró instancia de CATransporte ? true
+        INFO   Para depositar

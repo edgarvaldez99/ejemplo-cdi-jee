@@ -1,6 +1,6 @@
 package transportes;
 
-public class SoapTransporte implements CATransporte {
+public class SoapTransporte {//implements CATransporte {
 
 	private int reintentos;
 

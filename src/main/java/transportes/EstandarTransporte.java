@@ -1,6 +1,6 @@
 package transportes;
 
-public class EstandarTransporte implements CATransporte {
+public class EstandarTransporte {//implements CATransporte {
 
 	private int reintentos;
 

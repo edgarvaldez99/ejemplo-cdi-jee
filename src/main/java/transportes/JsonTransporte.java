@@ -1,6 +1,6 @@
 package transportes;
 
-public class JsonTransporte implements CATransporte {
+public class JsonTransporte {//implements CATransporte {
 
 	private int reintentos;
 
