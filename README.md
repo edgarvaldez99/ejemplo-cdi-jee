@@ -116,7 +116,7 @@ Funciona en ambos casos.
 	Funcionó
 
 
-20 - En este ejemplo trabajaremos más de cerca con el primer método de InjectionPoint, el getAnnotated, para ello debemos crear una nueva anotación, esta vez no como qualifier, cuyo nombre debe ser TransporteConfig y debe recibir la cantidad de reintentos que un tipo de transporte puede manejar, para ello editamos la Interfaces CATransporte agregandole el método setReintentos para que reciba la cantidad de reintentos del transporte, en cada clase implemetada de esta interfaces y verificar que imprima en consola la cantidad de reintentos que le pasamos como parámetro. Para que la anotación de confoguración funcione a nivel de Controller o método setter, debemos anotar al parámetro que se quiere configurar, es decir, debemos poner @TransporteConfig frente al parámetro CATransporte transporte.
+20 - En este ejemplo trabajaremos más de cerca con el primer método de InjectionPoint, el getAnnotated, para ello debemos crear una nueva anotación, esta vez no como qualifier, cuyo nombre debe ser TransporteConfig y debe recibir la cantidad de reintentos que un tipo de transporte puede manejar, para ello editamos la Interfaces CATransporte agregandole el método setReintentos para que reciba la cantidad de reintentos del transporte, en cada clase implemetada de esta interfaces y verificar que imprima en consola la cantidad de reintentos que le pasamos como parámetro. Para que la anotación de configuración funcione a nivel de Controller o método setter, debemos anotar al parámetro que se quiere configurar, es decir, debemos poner @TransporteConfig frente al parámetro CATransporte transporte.
 
 	Funcionó
 
@@ -124,3 +124,5 @@ Funciona en ambos casos.
 21 - Esta vez trabajamos con el método getBean el cual trae un objeto llamado ManagedBean, y este posee una referencia a la clase donde se hace la inyección. Para este ejemplo agregar la Anotación @TransporteConfig a nivel de clase y probar que los métodos getBeanClass().getAnnotation() del objeto mencionado hagan referencia a la anotación.
 
 	Funcionó
+	
+22 - En este ejemplo continuamos con el concepto de miembro en los qualifiers, esta vez agregamos el uso de @Nonbinding. Recordando que un qualifier es una anotación que sirve para discriminar tipos de objetos a inyectarse. La discriminación se hace a través de sus miembros (o a través de la falta de miembro alguno). Ejemplo: En @Transporte(tipo, version), @Transporte es el qualifier y tipo, versión son miembros del qualifier que hacen parte de la discriminación. Sin embargo, se pueden agregar miembros que no hagan parte de la discriminación anotándolos con @Nonbinding. Ejemplo: @Transporte(tipo=JSON, version=1, reintentos=5), en este caso reintentos es el que no forma parte de la discriminación. En este caso la cantidad de reintentos debe ser cargada desde el punto de inyección y cambiando su valor este no tendría efecto en el tipo de objeto a inyectarse.

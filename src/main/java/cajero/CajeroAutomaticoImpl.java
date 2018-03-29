@@ -5,13 +5,13 @@ import java.math.BigDecimal;
 import javax.inject.Inject;
 
 import transportes.CATransporte;
-import transportes.TransporteConfig;
+import transportes.qualifiers.TipoTransporte;
+import transportes.qualifiers.Transporte;
 
-@TransporteConfig(reintentos=17)
 public class CajeroAutomaticoImpl implements CajeroAutomatico {
 
-	@TransporteConfig(reintentos=9)
 	@Inject
+	@Transporte(tipo=TipoTransporte.JSON, version=1, reintentos=5)
 	CATransporte transporte;
 
 	public CATransporte getTransporte() {
